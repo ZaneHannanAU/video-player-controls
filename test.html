@@ -6,12 +6,9 @@
 		<title>testing</title>
 		<script src="video-controls.js" charset="utf-8"></script>
 		<style media="screen">
-			ul {
+			ul, ol {
 				display: flex;
-				flex-flow: row wrap;
-			}
-			li {
-				flex: 1 0 5em;
+				flex-flow: column-reverse nowrap;
 			}
 		</style>
 	</head>
@@ -20,17 +17,18 @@
 		<dl id="status">
 		</dl>
 		<h1>Keypresses</h1>
-		<ul id="latest-keys">
-		</ul>
+		<ol id="latest-keys">
+		</ol>
 	</body>
 	<script>
 		const latest = document.getElementById('latest-keys')
 		const status = document.getElementById('status')
-		function tester(k) {
-			if (k.key) {
+		function tester(e) {
+			if (e.key) {
 				var newLI = document.createElement('li')
-				newLI.innerText = k.key
-				latest.insertAdjacentElement('afterbegin', newLI)
+				newLI.innerText = e.key
+				latest.appendChild(newLI)
+				// console.time(e.key)
 			}
 
 			Object.entries(VIDEO_CONTROLS.state).forEach(([key, val]) => {
@@ -45,6 +43,7 @@
 				}
 				document.getElementById(key).querySelector('dd').innerText = val
 			})
+			// if (e.key) console.timeEnd(e.key)
 		}
 		window.addEventListener('keydown', tester)
 		window.addEventListener('load', tester)

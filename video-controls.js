@@ -107,5 +107,7 @@ const VIDEO_CONTROLS = // helper set & get functions
 }
 // window.addEventListener('keydown', VIDEO_KEYMAP)
 // For event switch window to your preferred handler.
-window.addEventListener('keydown', x => console.log(VIDEO_KEYMAP(x)))
+window.addEventListener('keydown', x => {
+	console.log(VIDEO_KEYMAP(x));
+})
 // testing boilerplate
