@@ -9,15 +9,15 @@ There are some you can see in almost player out there; e.g. spacebar for pause, 
 |     `?`/`h` | help dialogue                                                  |
 | `k`/`space` | pause                                                          |
 |         `j` | -30s                                                           |
-|      `left` | -5s                                                            |
 |         `k` | +30s                                                           |
+|      `left` | -5s                                                            |
 |     `right` | +5s                                                            |
 |        `up` | increase volume                                                |
 |      `down` | decrease volume                                                |
 |         `m` | mute volume                                                    |
 |   `f`/`F11` | toggle fullscreen                                              |
 |       `esc` | exit fullscreen                                                |
-|         `q` | quit (when not in fullscreen with confirmation) or exit fullscreen |
+|         `q` | quit (when not in fullscreen, with confirmation) or exit fullscreen |
 |   `Q`/`C-w` | quit/close tab                                                 |
 |         `c` | scroll caption language down (if applicable)                   |
 |         `C` | scroll caption language up (if applicable)                     |
@@ -42,5 +42,11 @@ For web based video players with ratings/comments/searching:
 | `!`/`~`/`s` | quick search                                                   |
 |         `#` | copy current timestamped URL to clipboard                      |
 |         `d` | toggle description                                             |
+|         `a` | toggle vote up                                                 |
+|         `z` | toggle vote down                                               |
+|         `A` | vote up                                                        |
+|         `Z` | vote down                                                      |
+|     `x`/`r` | report possibly explicit, copyright-infringing or otherwise inappropriate video |
+
 
 <!-- Ask Rob Dodson for some help, he can probably do that :-) -->
