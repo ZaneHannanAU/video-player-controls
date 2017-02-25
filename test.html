@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>testing</title>
+		<script src="video-controls.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<h1>Exposed options</h1>
+		<dl id="status">
+		</dl>
+		<h1>Keypresses</h1>
+		<ul id="latest-keys">
+		</ul>
+	</body>
+	<script>
+		const latest = document.getElementById('latest-keys')
+		const status = document.getElementById('status')
+		function tester(k) {
+			if (k.key) {
+				var newLI = document.createElement('li')
+				newLI.innerText = k.key
+				latest.insertAdjacentElement('afterbegin', newLI)
+			}
+
+			Object.entries(VIDEO_CONTROLS.state).forEach(([key, val]) => {
+				if (!document.getElementById(key)) {
+					var div = document.createElement('div')
+					div.id = key
+					var dt = document.createElement('dt')
+					dt.innerText = key
+					div.appendChild(dt)
+					div.appendChild(document.createElement('dd'))
+					status.appendChild(div)
+				}
+				document.getElementById(key).querySelector('dd').innerText = val
+			})
+		}
+		window.addEventListener('keydown', tester)
+		window.addEventListener('load', tester)
+	</script>
+</html>

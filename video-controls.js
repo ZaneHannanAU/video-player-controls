@@ -24,7 +24,10 @@ const VIDEO_KEYMAP = e => {
 		case '-':
 		case '<':
 			return VIDEO_CONTROLS.speed = VIDEO_CONTROLS.speed <= 1 ? (
-				VIDEO_CONTROLS.speed / 2
+				(	VIDEO_CONTROLS.speed - VIDEO_OPTS.speed.coarse
+				) >= VIDEO_OPTS.speed.min ? (
+					VIDEO_CONTROLS.speed / 2
+				) : VIDEO_OPTS.speed.min
 			) : VIDEO_CONTROLS.speed - VIDEO_OPTS.speed.coarse
 			break;
 		case '=':
@@ -64,6 +67,20 @@ const VIDEO_KEYMAP = e => {
 		case 'f':
 		case 'f11':
 			return VIDEO_CONTROLS.fullScreen = !VIDEO_CONTROLS.fullScreen
+		case 'a':
+			if (e.key == 'A' && e.shiftKey) {
+				return VIDEO_CONTROLS.vote = 1
+			} else {
+				return VIDEO_CONTROLS.vote = (VIDEO_CONTROLS.vote === 1) ? 0 : 1
+			}
+			break;
+		case 'z':
+			if (e.key == 'Z' && e.shiftKey) {
+				return VIDEO_CONTROLS.vote = -1
+			} else {
+				return VIDEO_CONTROLS.vote = (VIDEO_CONTROLS.vote === -1) ? 0 : -1
+			}
+			break;
 		default:
 			return e.key;
 	}
@@ -77,6 +94,7 @@ const VIDEO_CONTROLS = // helper set & get functions
 	,	speed: this.speed
 	,	fullscreen: this.fullScreen
 	,	muted: this.mute
+	,	vote: this.vote
 	}}
 ,	get fullScreen ( ) {return this.fullscreen || false}
 ,	set fullScreen (b) {this.fullscreen = b}
@@ -84,6 +102,8 @@ const VIDEO_CONTROLS = // helper set & get functions
 ,	set mute (b) {this.muted = b}
 ,	get speed ( ) {return this.playbackRate || 1}
 ,	set speed (m) {this.playbackRate = m < 4.01 ? m : 4}
+,	get vote ( ) {return this.votemod || 0}
+,	set vote (n) {this.votemod = n}
 }
 // window.addEventListener('keydown', VIDEO_KEYMAP)
 // For event switch window to your preferred handler.
