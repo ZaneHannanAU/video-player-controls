@@ -1,9 +1,13 @@
 const VIDEO_OPTS = // video options
 {	speed:
- 	{ min: .1
+	{	min: .1
 	,	max: 4
 	,	fine: .1
-	, coarse: .25 } }
+	,	coarse: .25 }
+,	volume:
+	{	min: 0
+	,	max: 2
+	,	step: .2 } }
 const VIDEO_KEYMAP = e => {
 	switch (e.key.toLocaleLowerCase()) {
 		case '?':
@@ -65,9 +69,8 @@ const VIDEO_KEYMAP = e => {
 	}
 }
 
-const VIDEO_CONTROLS = // helper functions
-{
-	get playback ( ) {return !this.paused}
+const VIDEO_CONTROLS = // helper set & get functions
+{	get playback ( ) {return !this.paused}
 ,	set playback (b) {this.paused = !b}
 ,	get state ( ) {return {
 		playback: this.playback

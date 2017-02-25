@@ -48,5 +48,4 @@ For web based video players with ratings/comments/searching:
 |         `Z` | vote down                                                      |
 |     `x`/`r` | report possibly explicit, copyright-infringing or otherwise inappropriate video |
 
-
-<!-- Ask Rob Dodson for some help, he can probably do that :-) -->
+<!-- Ask Rob Dodson for some help, he can probably do a11y on that :-) -->
