@@ -41,6 +41,6 @@ For web based video players with ratings/comments/searching:
 |     `'`/`"` | Comment (at this timestamp, if you want timestamped comments like nikoniko) |
 | `!`/`~`/`s` | quick search                                                   |
 |         `#` | copy current timestamped URL to clipboard                      |
-|         `d` | show description                                               |
+|         `d` | toggle description                                             |
 
 <!-- Ask Rob Dodson for some help, he can probably do that :-) -->
