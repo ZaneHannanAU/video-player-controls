@@ -32,7 +32,7 @@ There are some you can see in almost player out there; e.g. spacebar for pause, 
 |     `[0-9]` | go to that * 10% in video                                      |
 |     `,`/`{` | frame back                                                     |
 |     `.`/`}` | frame forward                                                  |
-|         `%` | skip to time stamp, whether given in `[h | s * 60 * 60]? : [m | s * 60]? : s` format (allow times like 120s = 2min, 300s = 5min etc) |
+|         `%` | skip to time stamp, given in `[h | s * 60 * 60]? :? [m | s * 60]? :? s` format (allow times like 120s = 2min, 300s = 5min etc) |
 
 For web based video players with ratings/comments/searching:
 
